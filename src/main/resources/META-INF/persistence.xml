@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="myPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+
+        <!-- Proveedor de Persistencia (Hibernate en este caso) -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Clases de Entidad a ser gestionadas por JPA -->
+        <class>org.example.entity.Employee</class>
+
+        <!-- Propiedades de Configuración -->
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/project"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="45665"/>
+
+            <!-- Controlador (Driver) de la Base de Datos -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+<!--    deprecate        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>-->
+            
+            <!-- esta propiedad nos mostrará las sentencias sql que realiza por debajo hibernate -->
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
